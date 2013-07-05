@@ -20,14 +20,6 @@ def store_entry?(link)
   link.href.include?('google')
 end
 
-def push_entry_into_stores_array(store_details, flavor_name)
-  name = store_details.first
-  street = store_details[1]
-  city = store_details[2].slice(/\D+/)[0..-2]
-  zip = store_details[2].slice(/\d+/)
-  @stores_array << [name, "#{street}, #{city} #{zip}", flavor_name]
-end
-
 def iterate_over_links(page, flavor_name)
   page.links.each_with_index do |link, index|
     break if link.href == nil
@@ -36,6 +28,14 @@ def iterate_over_links(page, flavor_name)
       push_entry_into_stores_array(store_details, flavor_name)
     end
   end
+end
+
+def push_entry_into_stores_array(store_details, flavor_name)
+  name = store_details.first
+  street = store_details[1]
+  city = store_details[2].slice(/\D+/)[0..-2]
+  zip = store_details[2].slice(/\d+/)
+  @stores_array << [name, "#{street}, #{city} #{zip}", flavor_name]
 end
 
 def iterate_over_flavors(flavor_options)
@@ -91,5 +91,8 @@ def run_scraper(zip_codes_filename, output_filename)
   ensure_unique_flavors(uniq_stores)
   export_uniq_stores_hash_to_csv(output_filename, uniq_stores)
 end
+
+
+# JUST EDIT THE LINE BELOW WITH YOUR INPUT AND OUTPUT CSV FILENAMES
 
 run_scraper('bay_area_zip_codes.csv', 'all_bay_area_stores.csv')
