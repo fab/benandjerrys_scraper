@@ -96,4 +96,4 @@ end
 
 # JUST EDIT THE LINE BELOW WITH YOUR INPUT AND OUTPUT CSV FILENAMES
 
-run_scraper('bay_area_zip_codes.csv', 'all_bay_area_stores.csv')
+run_scraper('zip_codes.csv', 'all_US_stores.csv')
