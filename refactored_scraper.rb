@@ -39,7 +39,8 @@ def push_entry_into_stores_array(store_details, flavor_name)
 end
 
 def iterate_over_flavors(flavor_options)
-  flavor_options[5..-19].each do |flavor_option|
+  flavors = flavor_options[5..9] + flavor_options[11..-19]
+  flavors.each do |flavor_option|
     @selectlist.value = flavor_option.value
     flavor_name = flavor_option.text.slice(/(?<=- ).*/)
     puts "Now scraping data for: #{flavor_name}"
