@@ -1,5 +1,5 @@
-require 'Mechanize'
-require 'CSV'
+require 'mechanize'
+require 'csv'
 
 def setup
   @agent = Mechanize.new

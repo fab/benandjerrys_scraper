@@ -1,5 +1,5 @@
 require 'mechanize'
-require 'CSV'
+require 'csv'
 
 a = Mechanize.new
 page = a.get('http://m.benjerry.com/flavor-locator')
