@@ -4,6 +4,8 @@ This is a web scraper that extracts data from the flavor locator on the [Ben & J
 
 The output data can also be used to build a [Ben & Jerry's API](https://github.com/fab/benandjerrys_api).
 
+There's also an [updated version](https://github.com/fab/benandjerrys_iron_scraper) of this web scraper that uses [iron.io](http://iron.io).
+
 ## Output data on a map
 
 ![alt text](https://www.filepicker.io/api/file/DY0jGIcVR2qTMKViN4mW "Ben & Jerry's scraper preview")
